@@ -1,27 +1,13 @@
-import { createContext, useState, type ReactNode } from "react";
-
-export type Task = {
-  id: string;
-  description: string;
-  status: "pending" | "in-progress" | "completed";
-};
-
-type TaskContextType = {
-  tasks: Task[];
-  addTask: (task: Omit<Task, "id">) => void;
-  removeTask: (id: string) => void;
-  editTask: (id: string, updatedTask: Partial<Omit<Task, "id">>) => void;
-};
-
-const TaskContext = createContext<TaskContextType | undefined>(undefined);
+import { useState, type ReactNode } from "react";
+import { TaskContext, type Task } from "./contexts";
 
 export const TaskProvider = ({ children }: { children: ReactNode }) => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
-  const addTask = (task: Omit<Task, "id">) => {
+  const addTask = (description: string) => {
     setTasks((prev) => [
       ...prev,
-      { ...task, id: crypto.randomUUID() },
+      { description, id: crypto.randomUUID(), status: "pending" },
     ]);
   };
 
@@ -31,9 +17,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
 
   const editTask = (id: string, updatedTask: Partial<Omit<Task, "id">>) => {
     setTasks((prev) =>
-      prev.map((task) =>
-        task.id === id ? { ...task, ...updatedTask } : task
-      )
+      prev.map((task) => (task.id === id ? { ...task, ...updatedTask } : task))
     );
   };
 

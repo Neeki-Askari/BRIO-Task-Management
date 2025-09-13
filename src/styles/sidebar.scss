@@ -1,4 +1,78 @@
 .sidebar-outer-container {
-    width: 25%;
-    background-color: #eeeeee;
+  width: 20%;
+  background-color: var(--light-gray-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-top: 50px;
+}
+.sidebar-button-group {
+  display: flex;
+  flex-direction: column;
+  align-content: left;
+  gap: 20px;
+  width: 70%;
+}
+
+.sidebar-link-button {
+  color: var(--primary-blue-color) !important;
+  align-self: flex-start;
+  &.active-true {
+    font-weight: bold;
+    background-color: rgba(211, 211, 211, 0.223) !important;
+    width: 200px;
+    justify-content: left;
+  }
+}
+#ask-new {
+  background-color: var(--primary-blue-color);
+  font-size: 12px;
+}
+
+.nav-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+.version {
+  font-size: 12px;
+  align-self: center;
+}
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(211, 211, 211, 0.223);
+  border-radius: 10px;
+  p {
+    color: var(--primary-blue-color);
+    margin: 0;
+  }
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.user-role {
+  font-size: 14px;
+}
+
+.profile-pic {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
 }
