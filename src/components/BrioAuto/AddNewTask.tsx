@@ -28,7 +28,7 @@ const AddNewTask: React.FC = () => {
           <TextField
             className="task-descrition-input"
             multiline
-            minRows={5}
+            minRows={4}
             placeholder="Describe any task"
             fullWidth
             value={input}
@@ -38,7 +38,7 @@ const AddNewTask: React.FC = () => {
                 startAdornment: (
                   <InputAdornment
                     position="start"
-                    sx={{ marginBottom: "90px" }}
+                    sx={{ marginBottom: "70px" }}
                   >
                     <SearchOutlinedIcon />
                   </InputAdornment>

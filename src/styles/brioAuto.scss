@@ -39,10 +39,10 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 50px 0;
+  margin: 40px 0;
   color: var(--primary-blue-color);
   h1 {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
   p {
     font-size: 14px;
@@ -67,6 +67,10 @@
 .task-descrition-input {
   > div {
     border-radius: 25px !important;
+    padding: 10px 10px !important;
+    textarea {
+      font-size: 0.9rem !important;
+    }
   }
 }
 
@@ -82,10 +86,320 @@
   width: auto !important;
 }
 .task-manager-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   width: 95%;
   border-radius: 5px;
   background-color: var(--light-gray-background);
   flex: 1;
   align-self: center;
   margin-bottom: 2%;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.tab-list {
+  width: max-content;
+  border-radius: 50px;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  button {
+    color: black !important;
+    width: 130px;
+    &.active {
+      color: #ffffff !important;
+      background-color: var(--primary-blue-color) !important;
+      border-radius: 50px !important;
+    }
+  }
+}
+
+.added-tasks-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 12px;
+}
+.all-tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 70%;
+}
+.task-card {
+  height: 130px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+.task-description {
+  color: var(--primary-blue-color);
+}
+.top-summary-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  p {
+    color: gray;
+    font-size: 0.7rem;
+  }
+  .left-section {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  #circle-icon {
+    height: 10px;
+    width: 10px;
+    color: var(--primary-blue-color);
+  }
+  .progress-bar {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    p {
+      color: var(--success-green);
+    }
+    .MuiLinearProgress-root {
+      background-color: #cccccc;
+      min-width: 45px !important;
+    }
+    .MuiLinearProgress-bar {
+      background-color: var(--success-green);
+    }
+  }
+}
+
+.horizontal-progress-timeline {
+  display: flex;
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    p {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border-radius: 50px;
+      background: var(--light-gray-background);
+      border: 1px solid #cccccc;
+      padding: 8px;
+      font-size: 14px;
+      color: #848484;
+    }
+    &.isCurrent-true {
+      p {
+        color: #3a53f3;
+        background-color: #8d9af32c;
+      }
+    }
+    &.isCompleted-true {
+      p {
+        color: var(--success-green);
+        background-color: #9ce1973a;
+      }
+    }
+  }
+
+  .line {
+    position: relative;
+    height: 2px;
+    background: #bdbdbd;
+    margin: 0 8px;
+    margin-right: 12px;
+    width: 25px;
+    border-radius: 2px;
+    &.isCurrent-true {
+      background-color: #3a53f3;
+    }
+    &.isCompleted-true {
+      background-color: var(--success-green);
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 5px;
+      height: 5px;
+      background: #bdbdbd;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      left: -5px;
+    }
+    &::after {
+      right: -5px;
+    }
+    &.isCurrent-true::after,
+    &.isCurrent-true::before {
+      background: #3a53f3;
+    }
+
+    &.isCompleted-true::after,
+    &.isCompleted-true::before {
+      background: var(--success-green);
+    }
+  }
+}
+
+.task-summary {
+  flex: 1;
+  height: max-content;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  .task-summary-heading {
+    color: gray;
+    font-size: 0.8rem;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #cccccc;
+  }
+}
+
+.summary-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 85%;
+  padding: 20px;
+  gap: 15px;
+  .timeline-line {
+    position: relative;
+    width: 1.5px;
+    height: 30px;
+    margin: 0 auto;
+    background: transparent;
+    margin-right: 10px;
+    &.success,
+    &.in-progress {
+      background: #3a53f3;
+    }
+
+    &.success {
+      background: var(--success-green);
+    }
+
+    &.success::before,
+    &.in-progress::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: inherit;
+    }
+
+    &.success::before {
+      background: var(--success-green);
+    }
+
+    &.in-progress::before {
+      background: #3a53f3;
+    }
+
+    &.pending {
+      background: transparent;
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+.summary-step {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  .timeline-content {
+    display: flex;
+    flex-direction: row;
+  }
+  .time {
+    margin-left: 100px;
+    margin-top: -10px;
+    font-size: 0.8em;
+    max-width: max-content;
+    color: gray;
+  }
+  .step-and-label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-top: -10px;
+    margin-bottom: 4px;
+    .step-name {
+      font-size: 0.9em;
+    }
+    .label {
+      font-size: 0.6em;
+      width: max-content;
+      background-color: var(--light-gray-background);
+      padding: 4px;
+      border-radius: 4px;
+      &.success {
+        color: var(--success-green);
+        background-color: #9ce1973a;
+      }
+      &.pending {
+        color: gray;
+      }
+      &.in-progress {
+        color: #3a53f3;
+        background-color: #8d9af32c;
+      }
+    }
+  }
+  .description {
+    font-size: 0.7em;
+    color: gray;
+  }
+}
+.summary-progress-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 40px;
+  padding: 10px;
+  border-top: 1px solid #cccccc;
+  .progress-bar-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    p {
+      font-size: 0.8em;
+      color: gray;
+    }
+  }
+  .MuiLinearProgress-root {
+    background-color: #cccccc;
+    min-width: 45px !important;
+  }
+  .MuiLinearProgress-bar {
+    background-color: var(--success-green);
+  }
+}
+
+.task-progress-container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 }

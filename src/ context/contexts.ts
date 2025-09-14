@@ -11,8 +11,10 @@ export const ActiveTabContext = createContext<ActiveTabContextType | undefined>(
 
 export type Task = {
   id: string;
+  summary: string;
   description: string;
-  status: "pending" | "in-progress" | "completed";
+  timeAdded: string;
+  status: "thinking" | "planning" | "executing" | "checking" | "completed";
 };
 
 export type TaskContextType = {

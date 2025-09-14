@@ -1,5 +1,5 @@
 .sidebar-outer-container {
-  width: 20%;
+  width: 18%;
   background-color: var(--light-gray-background);
   display: flex;
   flex-direction: column;
@@ -18,6 +18,7 @@
 .sidebar-link-button {
   color: var(--primary-blue-color) !important;
   align-self: flex-start;
+  font-size: 0.8rem !important;
   &.active-true {
     font-weight: bold;
     background-color: rgba(211, 211, 211, 0.223) !important;
@@ -27,7 +28,7 @@
 }
 #ask-new {
   background-color: var(--primary-blue-color);
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 
 .nav-footer {
@@ -39,7 +40,7 @@
   margin-bottom: 10px;
 }
 .version {
-  font-size: 12px;
+  font-size: 0.7rem;
   align-self: center;
 }
 .profile-container {
@@ -53,6 +54,7 @@
   p {
     color: var(--primary-blue-color);
     margin: 0;
+    font-size: 0.8rem;
   }
 }
 

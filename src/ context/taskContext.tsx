@@ -1,13 +1,23 @@
 import { useState, type ReactNode } from "react";
 import { TaskContext, type Task } from "./contexts";
+import { mockInitialTasks } from "./mockData";
 
 export const TaskProvider = ({ children }: { children: ReactNode }) => {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(mockInitialTasks);
 
   const addTask = (description: string) => {
     setTasks((prev) => [
       ...prev,
-      { description, id: crypto.randomUUID(), status: "pending" },
+      {
+        description,
+        id: crypto.randomUUID(),
+        status: "thinking",
+        summary: "Task summary",
+        timeAdded: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+      },
     ]);
   };
 
