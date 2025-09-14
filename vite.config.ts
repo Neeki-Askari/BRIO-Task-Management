@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/BRIO-Task-Management",
+  base: "/BRIO-Task-Management/",
   plugins: [react()],
 });
