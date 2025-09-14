@@ -1,6 +1,5 @@
-// TaskProgress.tsx
 import React, { useContext, useMemo } from "react";
-
+import "./taskProgress.scss";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import AutorenewRoundedIcon from "@mui/icons-material/AutorenewRounded";
 import WarningAmberOutlinedIcon from "@mui/icons-material/WarningAmberOutlined";
@@ -23,7 +22,7 @@ import {
 type ColumnId = "in-queue" | "in-progress" | "waiting-for-you" | "completed";
 
 const statusFromColumn: Record<ColumnId, Task["status"]> = {
-  "in-queue": "thinking", // you can set "planning" instead if you prefer
+  "in-queue": "thinking",
   "in-progress": "executing",
   "waiting-for-you": "checking",
   completed: "completed",
@@ -68,7 +67,6 @@ const TaskProgress: React.FC<{ tasks: Task[] }> = ({ tasks }) => {
 
   const { editTask } = useContext(TaskContext) as TaskContextType;
 
-  // Pre-filter tasks for each column (memoized for perf)
   const { inQueue, inProgress, waitingForYou, completed } = useMemo(() => {
     return {
       inQueue: tasks.filter(

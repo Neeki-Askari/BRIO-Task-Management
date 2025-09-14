@@ -1,6 +1,5 @@
 import { LinearProgress } from "@mui/material";
 import type { Task } from "../../../ context/contexts";
-import "../../../styles/brioAuto.scss";
 import TrackChangesOutlinedIcon from "@mui/icons-material/TrackChangesOutlined";
 const statusOrder = [
   "thinking",
@@ -51,7 +50,7 @@ const AddedTaskSummary: React.FC<{ tasks: Task[] }> = ({ tasks }) => {
             stepLabel = "Pending";
           }
           return (
-            <div key={step} className={`summary-step`}>
+            <div key={step} className="summary-step">
               <div className="timeline-content">
                 <div className={`timeline-line ${stepClass}`}></div>
                 <div className="task-info">

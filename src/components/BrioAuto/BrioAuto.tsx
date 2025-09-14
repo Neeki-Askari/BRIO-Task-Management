@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import "../../styles/brioAuto.scss";
+import "./brioAuto.scss";
 import AddNewTask from "./AddNewTask";
 import BrioAutoHeader from "./BioAutoHeader";
 import { TaskContext, type TaskContextType } from "../../ context/contexts";

@@ -3,3 +3,9 @@
   --light-gray-background: #fafaf9f3;
   --success-green: #4bb543;
 }
+
+.app-wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}

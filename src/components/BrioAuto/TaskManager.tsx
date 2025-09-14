@@ -1,8 +1,8 @@
-import "../../styles/brioAuto.scss";
+import "./brioAuto.scss";
 import type { Task } from "../../ context/contexts";
 import { useState } from "react";
 import { Button } from "@mui/material";
-import AddedTasksCard from "./AddedTasks/AddedTasksCard";
+import AddedTasks from "./AddedTasks/AddedTasks";
 import TaskProgress from "./TaskProgress/TaskProgress";
 import CompletedTasks from "./CompletedTasks/CompletedTasks";
 
@@ -23,7 +23,7 @@ const TaskManager: React.FC<{ tasks: Task[] }> = ({ tasks }) => {
       case "pending":
         return <TaskProgress tasks={tasks} />;
       default:
-        return <AddedTasksCard tasks={tasks} />;
+        return <AddedTasks tasks={tasks} />;
     }
   };
   return (

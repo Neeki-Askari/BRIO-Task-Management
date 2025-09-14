@@ -1,3 +1,5 @@
+import "./taskProgress.scss";
+
 import { IconButton } from "@mui/material";
 import {
   TaskContext,
