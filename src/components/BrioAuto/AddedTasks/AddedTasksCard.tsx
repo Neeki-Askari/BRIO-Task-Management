@@ -58,7 +58,7 @@ const AddedTasksCard: React.FC<{ tasks: Task[] }> = ({ tasks }) => {
   return (
     <div className="added-tasks-container">
       <div className="all-tasks-list">
-        {tasks.map((task: Task) => (
+        {tasks.reverse().map((task: Task) => (
           <div key={task.id} className="task-card">
             <div className="top-summary-info">
               <div className="left-section">
