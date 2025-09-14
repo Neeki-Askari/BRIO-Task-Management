@@ -10,7 +10,7 @@ export const ActiveTabContext = createContext<ActiveTabContextType | undefined>(
 );
 
 export type Task = {
-  id: string;
+  id: number;
   summary: string;
   description: string;
   timeAdded: string;
@@ -20,8 +20,8 @@ export type Task = {
 export type TaskContextType = {
   tasks: Task[];
   addTask: (description: string) => void;
-  removeTask: (id: string) => void;
-  editTask: (id: string, updatedTask: Partial<Omit<Task, "id">>) => void;
+  removeTask: (id: number) => void;
+  editTask: (id: number, updatedTask: Partial<Omit<Task, "id">>) => void;
 };
 
 export const TaskContext = createContext<TaskContextType | undefined>(

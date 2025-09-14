@@ -40,9 +40,9 @@ const statusOrder = [
   "completed",
 ];
 
-function LinearProgressWithLabel(
+const LinearProgressWithLabel = (
   props: LinearProgressProps & { value: number }
-) {
+) => {
   return (
     <div className="progress-bar">
       <p>{`${Math.round(props.value)}%`}</p>
@@ -51,7 +51,7 @@ function LinearProgressWithLabel(
       </div>
     </div>
   );
-}
+};
 
 const AddedTasksCard: React.FC<{ tasks: Task[] }> = ({ tasks }) => {
   const { removeTask } = useContext(TaskContext) as TaskContextType;

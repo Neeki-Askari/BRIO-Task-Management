@@ -10,7 +10,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
       ...prev,
       {
         description,
-        id: crypto.randomUUID(),
+        id: tasks.length + 1,
         status: "thinking",
         summary: "Task summary",
         timeAdded: new Date().toLocaleTimeString([], {
@@ -21,11 +21,11 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
     ]);
   };
 
-  const removeTask = (id: string) => {
+  const removeTask = (id: number) => {
     setTasks((prev) => prev.filter((task) => task.id !== id));
   };
 
-  const editTask = (id: string, updatedTask: Partial<Omit<Task, "id">>) => {
+  const editTask = (id: number, updatedTask: Partial<Omit<Task, "id">>) => {
     setTasks((prev) =>
       prev.map((task) => (task.id === id ? { ...task, ...updatedTask } : task))
     );
