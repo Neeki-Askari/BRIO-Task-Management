@@ -24,16 +24,25 @@ The project is built with **React + TypeScript**, styled with **Material UI**, a
 
 ### 1. Clone the repository
 
-````bash
+```bash
 git clone https://github.com/neeki-askari/BRIO-Task-Management.git
 cd BRIO-Task-Management
+```
 
 ### 2. Install dependencies
- ```bash
+
+```bash
 npm install
+```
 
 ### 3. Run locally
+
 ```bash
 npm run start
+```
 
-````
+### 4. Build for Production
+
+```bash
+npm run build
+```
