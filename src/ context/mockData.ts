@@ -37,4 +37,13 @@ export const mockInitialTasks: Task[] = [
     status: "completed",
     timeAdded: "08:30 AM",
   },
+  {
+    id: 5,
+    summary: "Finalize and Deploy",
+    description: "Complete the project and deploy to production.",
+    details:
+      "Research React Redux stores and create an example project. Show your summary, findings, and what you learned. Be prepared to give a demo.",
+    status: "completed",
+    timeAdded: "08:30 AM",
+  },
 ];

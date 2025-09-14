@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@mui/material";
 import AddedTasksCard from "./AddedTasks/AddedTasksCard";
 import TaskProgress from "./TaskProgress/TaskProgress";
+import CompletedTasks from "./CompletedTasks/CompletedTasks";
 
 const tabs = [
   { label: "Added Tasks", key: "all" },
@@ -13,11 +14,12 @@ const tabs = [
 
 const TaskManager: React.FC<{ tasks: Task[] }> = ({ tasks }) => {
   const [activeTab, setActiveTab] = useState(tabs[0].key);
+  const completedTasks = tasks.filter((task) => task.status === "completed");
 
   const renderContent = () => {
     switch (activeTab) {
       case "completed":
-        return <div>Completed</div>;
+        return <CompletedTasks tasks={completedTasks} />;
       case "pending":
         return <TaskProgress tasks={tasks} />;
       default:

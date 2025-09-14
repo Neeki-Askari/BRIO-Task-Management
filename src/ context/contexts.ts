@@ -13,6 +13,7 @@ export type Task = {
   id: number;
   summary: string;
   description: string;
+  details?: string;
   timeAdded: string;
   status: "thinking" | "planning" | "executing" | "checking" | "completed";
 };

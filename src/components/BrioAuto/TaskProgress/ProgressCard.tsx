@@ -49,7 +49,7 @@ const ProgressCard: React.FC<{ task: Task }> = ({ task }) => {
     );
   };
   return (
-    <div className="progress-card">
+    <div className="progress-card" draggable={true}>
       <div className="header">
         <p>Task {task.id + 1}</p>
         <IconButton onClick={() => removeTask(task.id)}>
