@@ -1,5 +1,5 @@
 import "./brioAuto.scss";
-import type { Task } from "../../ context/contexts";
+import type { Task } from "../../ context/contextTypes";
 import { useState } from "react";
 import { Button } from "@mui/material";
 import AddedTasks from "./AddedTasks/AddedTasks";
@@ -16,6 +16,7 @@ const TaskManager: React.FC<{ tasks: Task[] }> = ({ tasks }) => {
   const [activeTab, setActiveTab] = useState(tabs[0].key);
   const completedTasks = tasks.filter((task) => task.status === "completed");
 
+  //render tab content based on status
   const renderContent = () => {
     switch (activeTab) {
       case "completed":

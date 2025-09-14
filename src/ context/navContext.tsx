@@ -1,10 +1,10 @@
-import React, {useState, type ReactNode } from "react";
+import React, { useState, type ReactNode } from "react";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import RestorePageOutlinedIcon from "@mui/icons-material/RestorePageOutlined";
 import ImportContactsOutlinedIcon from "@mui/icons-material/ImportContactsOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { ActiveTabContext } from "./contexts";
+import { ActiveTabContext } from "./contextTypes";
 
 export type LinkButton = {
   name: string;
@@ -30,9 +30,9 @@ const initialButtons: LinkButton[] = [
   { name: "Brio Auto", icon: <RestorePageOutlinedIcon />, active: true },
 ];
 
-
 export const ActiveTabProvider = ({ children }: { children: ReactNode }) => {
-  const [linkNavigationButtons, setLinkNavigationButtons] = useState<LinkButton[]>(initialButtons);
+  const [linkNavigationButtons, setLinkNavigationButtons] =
+    useState<LinkButton[]>(initialButtons);
 
   const setActiveTab = (name: string) => {
     setLinkNavigationButtons((prev) =>

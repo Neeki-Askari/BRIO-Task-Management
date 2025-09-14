@@ -1,5 +1,5 @@
 import { LinearProgress } from "@mui/material";
-import type { Task } from "../../../ context/contexts";
+import type { Task } from "../../../ context/contextTypes";
 import TrackChangesOutlinedIcon from "@mui/icons-material/TrackChangesOutlined";
 const statusOrder = [
   "thinking",

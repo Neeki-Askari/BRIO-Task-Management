@@ -1,5 +1,5 @@
 import "./completedTasksStyles.scss";
-import type { Task } from "../../../ context/contexts";
+import type { Task } from "../../../ context/contextTypes";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import CircleIcon from "@mui/icons-material/Circle";
 import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";

@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-import { TaskContext, type Task } from "./contexts";
+import { TaskContext, type Task } from "./contextTypes";
 import { mockInitialTasks } from "./mockData";
 
 export const TaskProvider = ({ children }: { children: ReactNode }) => {

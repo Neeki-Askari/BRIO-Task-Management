@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { TaskContext, type TaskContextType } from "../../ context/contexts"; // Adjust path if needed
+import { TaskContext, type TaskContextType } from "../../ context/contextTypes"; // Adjust path if needed
 import { Box, Button, InputAdornment, TextField } from "@mui/material";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import AttachFileOutlinedIcon from "@mui/icons-material/AttachFileOutlined";
@@ -9,6 +9,7 @@ const AddNewTask: React.FC = () => {
   const [input, setInput] = useState("");
   const { addTask } = useContext(TaskContext) as TaskContextType;
 
+  //trim any leading spaces before adding to task list
   const handleAddTask = () => {
     if (input.trim()) {
       addTask(input.trim());

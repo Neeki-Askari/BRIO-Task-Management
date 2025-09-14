@@ -1,4 +1,4 @@
-import type { Task } from "./contexts";
+import type { Task } from "./contextTypes";
 
 export const mockInitialTasks: Task[] = [
   {

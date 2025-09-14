@@ -1,4 +1,4 @@
-import type { Task } from "../../../ context/contexts";
+import type { Task } from "../../../ context/contextTypes";
 import "./addedTasks.scss";
 import "./addedTasks.scss";
 import AddedTaskCard from "./AddedTaskCard";

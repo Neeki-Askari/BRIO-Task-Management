@@ -5,7 +5,7 @@ import {
   TaskContext,
   type Task,
   type TaskContextType,
-} from "../../../ context/contexts";
+} from "../../../ context/contextTypes";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import { useContext } from "react";
 import LinearProgress, {

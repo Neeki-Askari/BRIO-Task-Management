@@ -10,7 +10,7 @@ import {
   TaskContext,
   type Task,
   type TaskContextType,
-} from "../../../ context/contexts";
+} from "../../../ context/contextTypes";
 import { useContext } from "react";
 
 const AddedTaskCard: React.FC<{ task: Task }> = ({ task }) => {

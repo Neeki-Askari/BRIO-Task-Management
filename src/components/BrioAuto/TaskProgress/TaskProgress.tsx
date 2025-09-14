@@ -17,7 +17,7 @@ import {
   TaskContext,
   type Task,
   type TaskContextType,
-} from "../../../ context/contexts";
+} from "../../../ context/contextTypes";
 
 type ColumnId = "in-queue" | "in-progress" | "waiting-for-you" | "completed";
 
@@ -28,7 +28,7 @@ const statusFromColumn: Record<ColumnId, Task["status"]> = {
   completed: "completed",
 };
 
-function Column({
+const Column = ({
   id,
   title,
   icon,
@@ -40,7 +40,7 @@ function Column({
   icon: React.ReactNode;
   children: React.ReactNode;
   count: number;
-}) {
+}) => {
   const { setNodeRef, isOver } = useDroppable({ id });
   return (
     <div
@@ -58,7 +58,7 @@ function Column({
       {children}
     </div>
   );
-}
+};
 
 const TaskProgress: React.FC<{ tasks: Task[] }> = ({ tasks }) => {
   const sensors = useSensors(

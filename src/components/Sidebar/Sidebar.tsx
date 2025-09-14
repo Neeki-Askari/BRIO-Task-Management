@@ -7,7 +7,7 @@ import { useContext } from "react";
 import {
   ActiveTabContext,
   type ActiveTabContextType,
-} from "../../ context/contexts";
+} from "../../ context/contextTypes";
 
 const Sidebar: React.FC = () => {
   const { linkNavigationButtons } = useContext(

@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import "./brioAuto.scss";
 import AddNewTask from "./AddNewTask";
 import BrioAutoHeader from "./BioAutoHeader";
-import { TaskContext, type TaskContextType } from "../../ context/contexts";
+import { TaskContext, type TaskContextType } from "../../ context/contextTypes";
 import TaskManager from "./TaskManager";
 
 const BrioAuto: React.FC = () => {
