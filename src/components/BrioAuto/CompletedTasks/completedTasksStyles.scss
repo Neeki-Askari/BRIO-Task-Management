@@ -1,12 +1,13 @@
 .completed-tasks-outer-container {
   display: flex;
   gap: 10px;
+  flex-flow: row;
   overflow-x: scroll;
   padding: 5px;
 }
 
 .completed-card-container {
-  width: 300px;
+  min-width: 300px;
   height: 200px;
   background-color: #ffffff;
   border: 0.5px solid #cccccc;
